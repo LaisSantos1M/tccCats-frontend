@@ -1,0 +1,273 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.inicio {
+    min-height: 100vh;
+    background: #0b7dbc;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+/* Faixas */
+.faixa-topo,
+.faixa-baixo {
+    width: 100%;
+    height: 25px;
+    background: #9c52aa;
+}
+
+.faixa-baixo {
+    position: absolute;
+    bottom: 0;
+}
+
+/* Título */
+.titulo {
+    margin-top: 40px;
+    color: #d84d9b;
+    font-size: 4rem;
+    font-family: cursive;
+}
+
+/* Área dos cartões */
+.botoes {
+    display: flex;
+    gap: 40px;
+    margin-top: 50px;
+}
+
+/* Cartões */
+.botao-menu {
+    width: 120px;
+    height: 140px;
+    background: #a553b4;
+    border: 4px solid #7f3e97;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+
+    padding-top: 10px;
+
+    color: #5b4278;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+
+    cursor: none;
+    transition: 0.3s;
+}
+
+.botao-menu:hover {
+    background: #b761c7;
+    transform: scale(1.05);
+}
+
+.botoesLogin {
+    margin-top: 30px;
+    margin-bottom: 30px;
+
+    display: flex;
+    justify-content: center;
+}
+
+.cabecalho {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 40px;
+}
+
+.botao-login {
+    width: 90px;
+    height: 60px;
+    background: #a553b4;
+    border: 4px solid #7f3e97;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: #5b4278;
+    font-weight: bold;
+    text-decoration: none;
+
+    cursor:none;
+    transition: 0.3s;
+}
+
+.botoesLogin a {
+    text-decoration: none;
+}
+
+.botao-cadastro{
+    width: 90px;
+    height: 80px;
+    background: #a553b4;
+    border: 4px solid #7f3e97;
+}
+
+
+/* Remove o estilo padrão do Link */
+.botoes a {
+    text-decoration: none;
+}
+
+
+/* Esconde cursor padrão */
+body {
+    cursor: none;
+}
+
+/* Patinha que segue o mouse */
+#cursorPaw {
+    position: fixed;
+    width: 70px;
+    height: 70px;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+}
+
+/* Patinhas criadas ao clicar */
+.paw {
+    position: fixed;
+    width: 70px;
+    height: 70px;
+    pointer-events: none;
+    animation: sumir 2s forwards;
+    z-index: 9998;
+}
+
+/* Dedinhos */
+.toe {
+    width: 16px;
+    height: 20px;
+    background: pink;
+    border-radius: 50%;
+    position: absolute;
+}
+
+.toe1 {
+    top: 5px;
+    left: 8px;
+}
+
+.toe2 {
+    top: 0;
+    left: 26px;
+}
+
+.toe3 {
+    top: 5px;
+    left: 44px;
+}
+
+.toe4 {
+    top: 20px;
+    left: 54px;
+}
+
+/* Almofada */
+.pad {
+    width: 38px;
+    height: 42px;
+    background: pink;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 0;
+    left: 18px;
+}
+
+/* Animação */
+@keyframes sumir {
+    0% {
+        transform: scale(0.5) rotate(0deg);
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(1.5) rotate(25deg);
+        opacity: 0;
+    }
+}
+
+/*Parte do cadastro*/
+
+.body {
+    margin: 0;
+    background-color: #a7a0e8;
+    font-family: Arial, sans-serif;
+}
+
+.pagina-doador {
+    padding: 20px;
+}
+
+.caixa-verde {
+    width: 70px;
+    height: 20px;
+    border: 3px solid #00aa2f;
+    margin-bottom: 5px;
+}
+
+.seta-area {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 10px;
+}
+
+.caixa-vermelha {
+    width: 70px;
+    height: 20px;
+    border: 3px solid #8b0000;
+}
+
+.formulario {
+    display: flex;
+    gap: 20px;
+}
+
+.foto {
+    width: 120px;
+    height: 140px;
+    border: 4px solid #3f51b5;
+    background: #ececec;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    color: black;
+}
+
+.campos {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.campos input {
+    width: 120px;
+    height: 25px;
+    border: 2px solid #4c5cff;
+    padding-left: 5px;
+    font-size: 18px;
+    background: #f5f5f5;
+}
+
+.status {
+    display: flex;
+    gap: 5px;
+    margin-top: 5px;
+}
