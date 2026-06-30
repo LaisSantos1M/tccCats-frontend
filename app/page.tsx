@@ -1,5 +1,5 @@
 import Link from "next/link";
-import PawCursor from "./PawCursor";
+import PawCursor from "../components/PawCursor";
 
 export default function Home() {
   return (

@@ -98,7 +98,7 @@
     font-weight: bold;
     text-decoration: none;
 
-    cursor:none;
+    cursor: none;
     transition: 0.3s;
 }
 
@@ -106,9 +106,13 @@
     text-decoration: none;
 }
 
-.botao-cadastro{
-    width: 90px;
-    height: 80px;
+.botao-cadastro {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 70px;
+    height: 60px;
     background: #a553b4;
     border: 4px solid #7f3e97;
 }

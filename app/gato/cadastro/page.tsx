@@ -2,12 +2,15 @@
 import { SubmitEvent, useState } from "react";
 import { CreateGato } from "./actions";
 import { useRouter } from "next/navigation";
-import PawCursor from "@/app/PawCursor";
+import PawCursor from "@/components/PawCursor";
+import Link from "next/link";
+
 
 export default function GatoCadastroPage() {
     const [nome, setNome] = useState("");
     const [vacina, setVacina] = useState("0");
     const [cor_raca, setCor_Raca] = useState("");
+    const [numeroDeTelefone, setNumero_De_Telefone] = useState("");
     const [data_nascimento, setData_nascimento] = useState("");
     const router = useRouter();
 
@@ -16,9 +19,10 @@ export default function GatoCadastroPage() {
         const response = await CreateGato({
             nome,
             vacina: Number(vacina),
-             cor_raca,
+            cor_raca,
             data_nascimento: new Date(data_nascimento),
-            pessoas: []
+            numeroDeTelefone,
+
         });
 
         if (!response) {
@@ -33,15 +37,15 @@ export default function GatoCadastroPage() {
         alert(response);
     }
     return (
-       
+
         <div className="w-screen h-screen flex flex-col items-center justify-center inicio ">
             <PawCursor />
-        <h1 className="titulo">Adopt Marlis</h1>
+            <h1 className="titulo">Adopt Marlis</h1>
             <form className="px-10 py-5 flex flex-col gap-2 bg-pink-950   rounded-lg"
                 onSubmit={handleSubmit}>
 
                 <input
-                
+
                     className="formulario"
                     type="text"
                     placeholder="Nome"
@@ -70,8 +74,19 @@ export default function GatoCadastroPage() {
                     onChange={(e) => setData_nascimento(e.target.value)}
 
                 />
-          
+                <input
+                    className="formulario "
+                    type="int"
+                    placeholder="numeroDeTelefone"
+                    value={numeroDeTelefone}
+                    onChange={(e) => setNumero_De_Telefone(e.target.value)}
+
+                />
+
                 <button className="botao-cadastro" type="submit">Cadastrar</button>
+                <Link href="/gatos" className="mt-5 bg-white text-black px-4 py-2 rounded">
+                    Voltar
+                </Link>
 
 
 
@@ -79,8 +94,8 @@ export default function GatoCadastroPage() {
             </form>
 
         </div>
-        
-    
+
+
 
 
     )

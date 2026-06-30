@@ -11,10 +11,9 @@ export async function getGatos() {
     const token = cookiesStore.get("access_token")?.value;
 
 
-    const response = await fetch("http://localhost:3000/gatos", {
+    const response = await fetch("http://localhost:8080/gatos", {
         headers: {
-            Authorization: `
-            Bearer ${token}`,
+            Authorization: `Bearer ${token}`,
         },
         next: { tags: ["listar"] },
     })
