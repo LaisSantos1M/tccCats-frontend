@@ -42,6 +42,15 @@ export default function Home() {
 
       </div>
 
+      <div className="texto">
+        Objetivo
+      </div>
+      <div className="textinho">
+        Nossa missão é conectar pessoas interessadas <br/>
+       em adotar gatos, com gatos disponíveis para adoção,<br/>
+        promovendo um mundo melhor para os animais de estimação.
+      </div>
+
       <div className="faixa-baixo"></div>
 
     </main>

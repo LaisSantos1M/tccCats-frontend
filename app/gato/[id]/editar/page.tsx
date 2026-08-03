@@ -2,7 +2,7 @@
 
 import { useParams, useRouter } from "next/navigation";
 import { SubmitEvent, useEffect, useState } from "react";
-import { getGato, updateGato} from "../actions";
+import { getGato, updateGato } from "../actions";
 import { Gato } from "@/interfaces/gatos";
 
 export default function GatoPage() {
@@ -49,10 +49,8 @@ export default function GatoPage() {
                 <div>
                     cor ou raça:
                     <input value={gato.cor_raca}
-                        className="bg-red-200 flex border"
-                        type="number"
-                        onChange={(e) => handleChange(Number(e.target.value), "cor_raca")} />
-
+                     className="bg-red-200 flex border"
+                      onChange={(e) => handleChange(e.target.value, "cor_raca")} />
                 </div>
 
                 <div>
@@ -64,7 +62,7 @@ export default function GatoPage() {
 
                 </div>
 
-                 <div>
+                <div>
                     Número de telefone:
                     <input value={gato.numeroDeTelefone}
                         className="bg-red-200 flex border"
@@ -77,16 +75,6 @@ export default function GatoPage() {
                     Editar
                 </button>
             </form>
-
-            <div className="bg-white rounded-xl h-[20%] overflow-y-auto flex text-black p-4 gap-1 w-[50%]" >
-
-                <ul className="w-px h-full bg-black"></ul>
-            </div>
-
-
-            <button className="bg-black text-white rounded-xl px-10 py-2 cursor-pointer" >
-                Salvar matrículas
-            </button>
 
         </div>
     );

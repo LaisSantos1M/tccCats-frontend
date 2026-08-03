@@ -21,7 +21,8 @@ export default function GatoCadastroPage() {
             vacina: Number(vacina),
             cor_raca,
             data_nascimento: new Date(data_nascimento),
-            numeroDeTelefone,
+            numeroDeTelefone: Number(numeroDeTelefone),
+            pessoas: []
 
         });
 
@@ -30,6 +31,7 @@ export default function GatoCadastroPage() {
             setVacina("");
             setCor_Raca("");
             setData_nascimento("");
+            setNumero_De_Telefone("");
             router.push("/gatos");
             return;
         }
@@ -84,12 +86,10 @@ export default function GatoCadastroPage() {
                 />
 
                 <button className="botao-cadastro" type="submit">Cadastrar</button>
-                <Link href="/gatos" className="mt-5 bg-white text-black px-4 py-2 rounded">
+                
+                <Link href="/gatos" className="voltar">
                     Voltar
                 </Link>
-
-
-
 
             </form>
 

@@ -10,8 +10,7 @@ export async function getGatos() {
     const cookiesStore = await cookies();
     const token = cookiesStore.get("access_token")?.value;
 
-
-    const response = await fetch("http://localhost:8080/gatos", {
+    const response = await fetch(`http://localhost:8080/gatos`, {
         headers: {
             Authorization: `Bearer ${token}`,
         },

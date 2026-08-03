@@ -25,11 +25,14 @@ export default async function GatosPage() {
 
                 </ul>
             </div>
+            <div >
+
+            </div>
 
             <Link href="/gato/cadastro" className=" botao-menu" >
                 Cadastrar gatos
             </Link>
-            <Link href="/" className="mt-5 bg-white text-black px-4 py-2 rounded">
+            <Link href="/" className="voltar">
                 Voltar
             </Link>
 
