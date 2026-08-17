@@ -4,36 +4,25 @@ import { revalidateTag } from "next/cache";
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 
-interface CreateGato {
-    nome: string;
-    vacina: number;
-    cor_raca: string;
-    data_nascimento: Date;
-    numeroDeTelefone: number;
-    pessoas: string[];
-}
-
-
-export async function CreateGato(gato: CreateGato) {
+export async function CreateGato(formData: FormData) {
     const cookiesStore = await cookies();
     const token = cookiesStore.get("access_token")?.value;
 
-    const response = await fetch("http://localhost:3000/gatos", {
+    const response = await fetch("http://localhost:8080/gatos", {
         method: "POST",
         headers: {
-            Authorization: `Bearer ${token}`
-            , "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
         },
-        body: JSON.stringify(gato)
+        body: formData,
     });
 
     if (response.status === 201) {
         revalidateTag("listar", "max");
         return;
     }
+
     if (response.status === 401) {
         redirect("/login");
-
     }
 
     try {
@@ -41,7 +30,6 @@ export async function CreateGato(gato: CreateGato) {
         return data;
     } catch (e) {
         console.error(e);
-        return "Erro ao cadastrar o gato"
+        return "Erro ao cadastrar o gato";
     }
-
 }

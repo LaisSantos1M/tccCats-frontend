@@ -34,16 +34,27 @@ export default function GatoPage() {
                     <p>cor ou raça: {gato.cor_raca}</p>
                     <p>vacina: {gato.vacina}</p>
                     <p>número De Telefone: {gato.numeroDeTelefone}</p>
+                    <p>
+                        data de nascimento:{" "}
+                        {gato.data_nascimento
+                            ? new Date(gato.data_nascimento).toLocaleDateString("pt-BR")
+                            : "-"}
+                    </p>
                     <Link href={`/gato/${id}/editar`}>
+
                         <PenBox />
 
                     </Link>
 
                 </div>
             </div>
-            <div>
-                <Image src="/image/gato-dormindo.jpg" alt="Gatinho dormindo" width={400} height={300} />
-            </div>
+            
+            {gato.foto && (
+                <div className="foto">
+                    <Image src={gato.foto} alt={gato.nome} width={400} height={300} unoptimized />
+                </div>
+            )}
+
             <Link href="/gatos" className="voltar">
                 Voltar
             </Link>

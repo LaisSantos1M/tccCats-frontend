@@ -17,7 +17,7 @@ export default async function GatosPage() {
                 <br />
             </div>
 
-            <div className="w-50 h-50 bg-white rounded-md shadow-md shadow-white text-black p-2 overflow-auto"  >
+            <div className="w-50 h-50 bg-white text-black p-2 overflow-auto"  >
                 <ul className=" flex flex-col gap-2 items-center " >
                     {gatos.map(gato => (
                         <GatoItem key={gato.id} nome={gato.nome} id={gato.id} />
@@ -29,7 +29,7 @@ export default async function GatosPage() {
 
             </div>
 
-            <Link href="/gato/cadastro" className=" botao-menu" >
+            <Link href="/gato/cadastro" className=" botao-cadastro1" >
                 Cadastrar gatos
             </Link>
             <Link href="/" className="voltar">

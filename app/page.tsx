@@ -4,6 +4,7 @@ import PawCursor from "../components/PawCursor";
 export default function Home() {
   return (
     <main className="inicio">
+      
 
       <PawCursor />
 

@@ -1,18 +1,22 @@
-import LoginForm from  "@/components/LoginForm";
+import LoginForm from "@/components/LoginForm";
 
 import { loginAction } from "./actions";
 import PawCursor from "@/components/PawCursor";
+import Link from "next/link"
 
 
-export default function LoginPage(){
-    return(
+export default function LoginPage() {
+    return (
         <div className="inicio">
-            <div className="mt-10 mb-10 text-5xl font-bold underline decoration-red-950 decoration-light-blue-700 flex gap-70 ">
-           <h1>Login</h1>
-           <PawCursor/>
-            
-            <LoginForm onSend={loginAction}/>
+            <h1>Login</h1>
+            <PawCursor />
+            <div className="container">
+                <LoginForm onSend={loginAction} />
+
             </div>
+            <Link href="/" className="voltar">
+                Voltar
+            </Link>
         </div>
     )
 }

@@ -33,19 +33,22 @@ export async function getGato(id: number) {
 
 }
 
-export async function updateGato(id: number, gato: Gato) {
 
+
+export async function updateGato(id: number, formData: FormData) {
     const cookiesStore = await cookies();
     const token = cookiesStore.get("access_token")?.value;
 
-    const response = await fetch(`http://localhost:3000/gatos/${id}`, {
-        method: "PUT",
-        headers: {
-            Authorization: `Bearer ${token}`,
-            "Content-Type": "application/json",
-        },
-        body: JSON.stringify(gato)
-    })
+    const response = await fetch(
+        `http://localhost:8080/gatos/${id}`,
+        {
+            method: "PUT",
+            headers: {
+                Authorization: `Bearer ${token}`,
+            },
+            body: formData,
+        }
+    );
 
     if (response.status === 401) {
         redirect("/login");
@@ -53,15 +56,15 @@ export async function updateGato(id: number, gato: Gato) {
 
     if (response.status === 200) {
         revalidateTag("pegarDados", "max");
+        revalidateTag("listar", "max");
         return;
     }
+
     try {
         const data = await response.json();
-
         return data;
     } catch (e) {
         console.error(e);
-        return "Erro ao atualizar"
+        return "Erro ao atualizar";
     }
-
 }
