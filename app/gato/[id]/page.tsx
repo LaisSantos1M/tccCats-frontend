@@ -10,7 +10,6 @@ import PawCursor from "@/components/PawCursor";
 import Image from 'next/image'
 
 
-
 export default function GatoPage() {
     const { id } = useParams();
     const [gato, setGato] = useState({} as Gato);

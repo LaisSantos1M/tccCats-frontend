@@ -8,6 +8,8 @@ export default async function GatosPage() {
 
     return (
         <main className="inicio">
+            <div className="faixa-topo"></div>
+            <div className="faixa-baixo"></div>
             <PawCursor />
             <div >
 

@@ -58,6 +58,8 @@ export default function GatoCadastroPage() {
 
     return (
         <div className="w-screen h-screen flex flex-col items-center justify-center inicio">
+            <div className="faixa-topo"></div>
+            <div className="faixa-baixo"></div>
             <PawCursor />
 
             <h1 className="titulo">Adopt Marlis</h1>
@@ -129,7 +131,7 @@ export default function GatoCadastroPage() {
             </Link>
 
             <p className="palavras">
-                *Atenção, não coloque espaço quando colocar o número de telefone.*
+                *Atenção, não é obrigatorio colocar a foto*
             </p>
         </div>
     );

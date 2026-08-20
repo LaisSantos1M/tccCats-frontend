@@ -62,7 +62,7 @@ export default function GatoPage() {
             String(gato.numeroDeTelefone)
         );
 
-  
+
         if (foto) {
             formData.append("foto", foto);
         }
@@ -170,6 +170,7 @@ export default function GatoPage() {
                         </div>
 
                     </div>
+
 
                     <button
                         className="voltar"

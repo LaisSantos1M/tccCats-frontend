@@ -7,6 +7,7 @@ export interface GatoData{
     cor_raca:string;
     data_nascimento:Date;
     numeroDeTelefone:number;
+    foto?:string;
     createdAt: Date;
     updatedAt: Date;
 }
